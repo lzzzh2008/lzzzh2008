@@ -186,14 +186,9 @@
 <h1 id="关于闭包"><a href="#关于闭包" class="headerlink" title="关于闭包"></a>关于闭包</h1><blockquote>
 <p>闭包就是能够读取其他函数内部变量的函数。<br>由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。  以下代码中<code>f2</code>就是一个典型的闭包。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function f1()&#123;</span><br><span class="line"></span><br><span class="line">　　　　var n=999;</span><br><span class="line"></span><br><span class="line">　　　　function f2()&#123;</span><br><span class="line">　　　　　　alert(n);</span><br><span class="line">　　　　&#125;</span><br><span class="line"></span><br><span class="line">　　　　return f2;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　var result=f1();</span><br><span class="line"></span><br><span class="line">　　result(); // 999</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<p>先来看两个代码片段</p>
-<h4 id="片段一"><a href="#片段一" class="headerlink" title="片段一"></a>片段一</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;The Window&quot;;</span><br><span class="line">　　var object = &#123;</span><br><span class="line">　　　　name : &quot;My Object&quot;,</span><br><span class="line">　　　　getNameFunc : function()&#123;</span><br><span class="line">　　　　　　return function()&#123;</span><br><span class="line">　　　　　　　　return this.name;</span><br><span class="line">　　　　　　&#125;;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;;</span><br><span class="line"></span><br><span class="line">alert(object.getNameFunc()());</span><br></pre></td></tr></table></figure>
-<p>执行结果是 <em> The Window </em></p>
-<h3 id="片段二"><a href="#片段二" class="headerlink" title="片段二"></a>片段二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;The Window&quot;;</span><br><span class="line">　　var object = &#123;</span><br><span class="line">　　　　name : &quot;My Object&quot;,</span><br><span class="line">　　　　getNameFunc : function()&#123;</span><br><span class="line">　　　　　　var that = this;</span><br><span class="line">　　　　　　return function()&#123;</span><br><span class="line">　　　　　　　　return that.name;</span><br><span class="line">　　　　　　&#125;;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;;</span><br><span class="line">alert(object.getNameFunc()());</span><br></pre></td></tr></table></figure>
-<p>执行结果是 <em> My Object </em></p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>&emsp;&emsp;在片段一中，<code>object.getNameFunc()</code>返回了一个函数（这个函数并没有被执行），而这个返回的函数构成了闭包。<code>object.getNameFunc()()</code>第二个<code>()</code>执行了返回的函数，由于闭包，此时是<code>Window</code>调用闭包函数，也就是说此时<code>this</code>指向的是<code>window</code>。</p>
-<p>&emsp;&emsp;在片段二中，<code>object.getNameFunc()</code>的<code>var that = this;</code>被执行（此时this指向Object），执行闭包时的<code>that.name</code>指的就是<code>object</code>中的<code>name</code>，所以结果是<code>My Object</code></p>
-
+        
+          <a class="article-more-a" href="/2017/12/19/JavaScript闭包/#more">more >></a>
+        
       
 
       
@@ -272,25 +267,10 @@
 <li>第二章简单看看，script 里的 defer 和 async 属性了解下就好了，noscript 不用看  </li>
 <li>第三章位运算、label、with 不用看  </li>
 <li>第四章概念性质的了解就可以，基本类型与引用类型需要掌握  </li>
-<li>第五章正则不用看</li>
-<li>第六章都看看，重点内容  </li>
-<li>第七章也是重点内容，都需要看  </li>
-<li>第八章了解就可以了，知道 bom 是什么，用的时候能查到  </li>
-<li>第九章随便看看，有个印象就行  </li>
-<li>10，11，12 了解 DOM 的类型，掌握操作 DOM，包括选择、style、文本等  </li>
-<li>13 事件中和 IE 有关的部分不用看  </li>
-<li>14 表单内容需要掌握，可以和 jquery 的 api 结合看，简化理解  </li>
-<li>15 可以跳过，有兴趣的自己看看就好了  </li>
-<li>16 了解就行了，postMessage 可能会出现在跨域问题中</li>
-<li>17 18 19 跳过就可以了  </li>
-<li>20 21 是 JSON 和 AJAX，不过大部分应该掌握了，新加入的东西看看好了，用的时候 比如 formData 在上传文件的时候需要用上，progress 用的比较少。 跨域知识比较旧， 但是面试的套路就是要掌握这些，所以还是需要看。</li>
-<li>22 高级技巧感兴趣就看看，因为要求相对较高，不愿意看也没有关系  </li>
-<li>23 看看 localStorage 和 cookie 就可以，其他的实际用得不多  </li>
-<li>24 看看还是有必要的，算是合格的编程风格  </li>
-<li>25 使用比较多的是 requestAnimationFrame（主要是改良动画） 和 File API，其他的 使用较少，用的时候再查就可以了 附录部分里的严格模式不用看，其他了解下就可以</li>
-</ol>
-<img src="/2017/12/13/《JavaScriptg高级程序设计》阅读指南/ano.jpg" width="123">
-
+<li><p>第五章正则不用看</p></li></ol>
+        
+          <a class="article-more-a" href="/2017/12/13/《JavaScriptg高级程序设计》阅读指南/#more">more >></a>
+        
       
 
       
@@ -365,14 +345,10 @@
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a><br></p>
+        
+          <a class="article-more-a" href="/2017/11/29/hello-world/#more">more >></a>
+        
       
 
       
