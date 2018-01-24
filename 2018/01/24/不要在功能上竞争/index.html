@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lzzzh2008.top">
-  <title>JavaScript闭包 | Zenghui的博客</title>
+  <title>不要在功能上竞争 | Zenghui的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="看了阮一峰老师的闭包教程，有一个非常不错的例子来学习闭包和this关键字阮老师博文地址http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html   关于闭包 闭包就是能够读取其他函数内部变量的函数。由于在Javascript语言中，">
-<meta name="keywords" content="JavaScript">
+  <meta name="description" content="转自阮一峰老师《未来世界的幸存者》http://www.ruanyifeng.com/blog/2011/07/dont_compete_on_features.html 1、 苹果公司的电子产品，最大的特点就是它的易用性（usability）—-简单，美观，容易上手。它们通常不是功能最强大的，但往往是最好用的。 很多">
+<meta name="keywords" content="产品">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript闭包">
-<meta property="og:url" content="http://lzzzh2008.top/2017/12/19/JavaScript闭包/index.html">
+<meta property="og:title" content="不要在功能上竞争">
+<meta property="og:url" content="http://lzzzh2008.top/2018/01/24/不要在功能上竞争/index.html">
 <meta property="og:site_name" content="Zenghui的博客">
-<meta property="og:description" content="看了阮一峰老师的闭包教程，有一个非常不错的例子来学习闭包和this关键字阮老师博文地址http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html   关于闭包 闭包就是能够读取其他函数内部变量的函数。由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内">
-<meta property="og:updated_time" content="2018-01-05T06:37:59.548Z">
+<meta property="og:description" content="转自阮一峰老师《未来世界的幸存者》http://www.ruanyifeng.com/blog/2011/07/dont_compete_on_features.html 1、 苹果公司的电子产品，最大的特点就是它的易用性（usability）—-简单，美观，容易上手。它们通常不是功能最强大的，但往往是最好用的。 很多产品经理都想模仿这些特点。但是，一个难题就会随之而来：  很难让一件产品保持简单">
+<meta property="og:updated_time" content="2018-01-24T09:06:34.021Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript闭包">
-<meta name="twitter:description" content="看了阮一峰老师的闭包教程，有一个非常不错的例子来学习闭包和this关键字阮老师博文地址http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html   关于闭包 闭包就是能够读取其他函数内部变量的函数。由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内">
+<meta name="twitter:title" content="不要在功能上竞争">
+<meta name="twitter:description" content="转自阮一峰老师《未来世界的幸存者》http://www.ruanyifeng.com/blog/2011/07/dont_compete_on_features.html 1、 苹果公司的电子产品，最大的特点就是它的易用性（usability）—-简单，美观，容易上手。它们通常不是功能最强大的，但往往是最好用的。 很多产品经理都想模仿这些特点。但是，一个难题就会随之而来：  很难让一件产品保持简单">
   
     <link rel="alternative" href="/atom.xml" title="Zenghui的博客" type="application/atom+xml">
   
@@ -162,38 +162,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript闭包" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-不要在功能上竞争" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript闭包
+      不要在功能上竞争
     </h1>
   
 
         
-        <a href="/2017/12/19/JavaScript闭包/" class="archive-article-date">
-  	<time datetime="2017-12-19T09:31:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
+        <a href="/2018/01/24/不要在功能上竞争/" class="archive-article-date">
+  	<time datetime="2018-01-24T09:03:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>看了阮一峰老师的闭包教程，有一个非常不错的例子来学习闭包和this关键字<br>阮老师博文地址<a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html</a>  </p>
-<h1 id="关于闭包"><a href="#关于闭包" class="headerlink" title="关于闭包"></a>关于闭包</h1><blockquote>
-<p>闭包就是能够读取其他函数内部变量的函数。<br>由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。  以下代码中<code>f2</code>就是一个典型的闭包。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　　　<span class="keyword">var</span> n=<span class="number">999</span>;</span><br><span class="line"></span><br><span class="line">　　　　<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　alert(n);</span><br><span class="line">　　　　&#125;</span><br><span class="line"></span><br><span class="line">　　　　<span class="keyword">return</span> f2;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">var</span> result=f1();</span><br><span class="line"></span><br><span class="line">　　result(); <span class="comment">// 999</span></span><br></pre></td></tr></table></figure></p>
+        <p>转自阮一峰老师《未来世界的幸存者》<br><a href="http://www.ruanyifeng.com/blog/2011/07/dont_compete_on_features.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2011/07/dont_compete_on_features.html</a></p>
+<p>1、</p>
+<p>苹果公司的电子产品，最大的特点就是它的易用性（usability）—-简单，美观，容易上手。它们通常不是功能最强大的，但往往是最好用的。</p>
+<p>很多产品经理都想模仿这些特点。但是，一个难题就会随之而来：</p>
+<blockquote>
+<p>很难让一件产品保持简单易用，同时还具备大量的新功能。</p>
 </blockquote>
-<a id="more"></a>
-<p>先来看两个代码片段</p>
-<h4 id="片段一"><a href="#片段一" class="headerlink" title="片段一"></a>片段一</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"The Window"</span>;</span><br><span class="line">　　<span class="keyword">var</span> object = &#123;</span><br><span class="line">　　　　name : <span class="string">"My Object"</span>,</span><br><span class="line">　　　　getNameFunc : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　　　<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">　　　　　　&#125;;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;;</span><br><span class="line"></span><br><span class="line">alert(object.getNameFunc()());</span><br></pre></td></tr></table></figure>
-<p>执行结果是 <em> The Window </em></p>
-<h3 id="片段二"><a href="#片段二" class="headerlink" title="片段二"></a>片段二</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"The Window"</span>;</span><br><span class="line">　　<span class="keyword">var</span> object = &#123;</span><br><span class="line">　　　　name : <span class="string">"My Object"</span>,</span><br><span class="line">　　　　getNameFunc : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　<span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">　　　　　　<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　　　　　<span class="keyword">return</span> that.name;</span><br><span class="line">　　　　　　&#125;;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;;</span><br><span class="line">alert(object.getNameFunc()());</span><br></pre></td></tr></table></figure>
-<p>执行结果是 <em> My Object </em></p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>&emsp;&emsp;在片段一中，<code>object.getNameFunc()</code>返回了一个函数（这个函数并没有被执行），而这个返回的函数构成了闭包。<code>object.getNameFunc()()</code>第二个<code>()</code>执行了返回的函数，由于闭包，此时是<code>Window</code>调用闭包函数，也就是说此时<code>this</code>指向的是<code>window</code>。</p>
-<p>&emsp;&emsp;在片段二中，<code>object.getNameFunc()</code>的<code>var that = this;</code>被执行（此时this指向Object），执行闭包时的<code>that.name</code>指的就是<code>object</code>中的<code>name</code>，所以结果是<code>My Object</code></p>
+<p>如果你不断为产品添加新功能，在变得强大的同时，它还会变得越来越复杂，增加了用户的使用难度；如果你大力简化产品，在功能上比较单一，那么怎样与竞争对手抗衡呢？</p>
+<p>每个产品经理都会面对这个难题。对于新产品，这个问题尤其重要。因为新产品通常很难打开市场，最容易想到的解决办法就是为它不断增加功能，直到引起市场注意为止。但是，这样做是否正确呢？</p>
+<p>我对这个问题，一直很困惑，不知道开发新产品的时候，哪一个取向优先，多功能还是易用性？<br><a id="more"></a></p>
+<p>2、</p>
+<p>昨天，我读到了硅谷产品经理 Andrew Chen 的文章，顿时醍醐灌顶，一下子就找到了答案。</p>
+<p>他说，正确的做法，就是不要在功能上竞争。如果你的产品的核心概念行不通，那就重新定位这个产品，而不是为它添加新功能。你必须牢记在心，创造一个有竞争力的新产品，不要着眼于它的功能比别人多，而要着眼于它有一个截然不同的市场定位。</p>
+<p>如果市场上都是复杂的企业级工具，那就开发一个针对个人用户的简化版；如果市场上都是很正式的高端葡萄酒，那就开发一种便宜的、针对年轻人的、更休闲的酒精饮料；如果市场上都是提供长篇Blog服务的网站，那就开发一个很简单的、每次只能写140个字的网站；如果市场上都是技术性的、廉价的电子设备，那就开发人性化的、高价的电子设备。</p>
+<p>总之，你要做的不是添加功能，而是做一个市场定位不同的产品。</p>
+<p>3、</p>
+<p>这主要有两个原因。</p>
+<p>首先，你不太可能通过一个更多功能的新产品，战胜现有厂商。因为你开发出全面胜过别人的产品，需要很多时间；而且，等你开发出新功能，别人可能又做出了改进，或者拷贝了你的新功能。</p>
+<p>其次，比起新功能，消费者更容易为一个特殊定位的产品掏钱。</p>
+<p>所以，更好的策略是，开发一个简化的产品，突出某种不同的市场定位，争夺现有厂商的低端用户。这样的话，你不用开发一个全功能的产品，节省了时间，而且由于设计目标不同，更容易做出颠覆式创新（disruptive innovation）。</p>
+<p>4、</p>
+<p>下面是开发新产品时，几点可行的做法：</p>
+<p>（1）你不是做一个比竞争对手“更好”的产品，而是做一个“不同”的产品。</p>
+<p>（2）你只提供部分功能，但是很好地满足了用户的需求。</p>
+<p>（3）如果新产品的市场反响不好，增加新功能并不能解决问题。你应该重新定位你的产品，想想它能向消费者提供哪些不同的价值。</p>
+<p>（4）在产品设计和推广的每一个环节，都突出它的不同定位。</p>
 
       
 
@@ -228,7 +242,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">产品</a>
         		</li>
       		
 		</ul>
@@ -284,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://lzzzh2008.top/2017/12/19/JavaScript闭包/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://lzzzh2008.top/2018/01/24/不要在功能上竞争/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -298,18 +312,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/24/不要在功能上竞争/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          不要在功能上竞争
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/13/《JavaScriptg高级程序设计》阅读指南/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《JavaScript高级程序设计》阅读指南</div>
+    <a href="/2017/12/19/JavaScript闭包/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript闭包</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -339,7 +344,7 @@
   
 
   
-  <div id="SOHUCS" sid="JavaScript闭包" ></div> 
+  <div id="SOHUCS" sid="不要在功能上竞争" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
