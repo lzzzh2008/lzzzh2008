@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>是男人就过3关！</title>
+            <script src="elements/Paddle.js"></script>
+            <script src="elements/Ball.js"></script>
+            <script src="elements/Block.js"></script>
+            <script src="js/GuaGame.js"></script>
+            <script src="js/utils.js"></script>
+            <script src="js/level.js"></script>
+            <script src="js/scene.js"></script>
+            <script src="js/scene_end.js"></script>
+            <script src="js/title.js"></script>
+            <script src="js/common_scene.js"></script>
+
+            <!-- //BootStrap -->
+            <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+            <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+                integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link rel="stylesheet" href="css/template.css">
+            <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <style media="screen">
+                canvas {
+                    border:1px black solid;
+                }
+            </style>
+    </head>
+    <body>
+        <h1 >是男人就过3关！</h1>
+        <div class="gameWindow">
+            <canvas id="id-canvas" width="400" height="300"></canvas>
+        </div>
+
+
+        <!-- gameInof  -->
+        <div class="gameInfo">
+            <div class="panel panel-default" id="id-div-scorePanel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Your Score</h3>
+                </div>
+                <div class="panel-body" id="id-div-score">
+                    <p>得分：0</p>
+                    <br/>
+                    <p>第1关</p>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">How to play</div>
+                <div class="panel-body">
+                    <h3>移动拍子:  <kbd>A</kbd> and <kbd>D</kbd></h3>
+                    <h3>发射小球:  <kbd>F</kbd></h3>
+                    <h3>暂停游戏:  <kbd>P</kbd></h3>
+                    <h3>开始游戏:  <kbd>K</kbd></h3>
+                    <h3>重新开始:  <kbd>R</kbd></h3>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- change fraps -->
+        <input id="id-input-speed" type="range" value="1">
+<script src="js/main.js"></script>
+    </body>
+</html>
